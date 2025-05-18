@@ -6,6 +6,11 @@ setup(
     name=package_name,
     version='0.0.0',
     packages=find_packages(exclude=['test']),
+    install_requires=[
+        'setuptools',
+        'pyserial>=3.0,<4.0',
+        'pyvesc>=1.0.5',
+    ],
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
@@ -21,6 +26,7 @@ setup(
     entry_points={
         'console_scripts': [
             'damiao_node = active_caster.damiao_node:main',
+            'vesc_node = active_caster.vesc_node:main',
         ],
     },
 )
