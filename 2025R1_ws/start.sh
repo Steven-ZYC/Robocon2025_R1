@@ -25,8 +25,8 @@ source install/setup.bash
 # Launch nodes manually
 
 # Start damiao_node
-echo "Starting damiao_node..."
-gnome-terminal -- bash -c "ros2 run damiao damiao_node; exec bash"
+echo "Starting damiao_node from active_caster package..."
+gnome-terminal -- bash -c "ros2 run active_caster damiao_node; exec bash"
 
 # Start navigation_node
 echo "Starting active_caster_node..."
