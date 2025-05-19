@@ -1,4 +1,6 @@
 from setuptools import find_packages, setup
+import os
+from glob import glob
 
 package_name = 'active_caster'
 
@@ -20,7 +22,7 @@ setup(
     zip_safe=True,
     maintainer='steven',
     maintainer_email='yanczhang8@gmail.com',
-    description='TODO: Package description',
+    description='Active caster drive package for EdUHK 2025R1',
     license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={

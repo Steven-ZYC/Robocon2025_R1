@@ -28,6 +28,10 @@ source install/setup.bash
 echo "Starting damiao_node from active_caster package..."
 gnome-terminal -- bash -c "ros2 run active_caster damiao_node; exec bash"
 
+# Start vesc_node
+echo "Starting vesc_node from active_caster package..."
+gnome-terminal -- bash -c "ros2 run active_caster vesc_node; exec bash"
+
 # Start navigation_node
 echo "Starting active_caster_node..."
 gnome-terminal -- bash -c "ros2 run navigation navigation_node; exec bash"

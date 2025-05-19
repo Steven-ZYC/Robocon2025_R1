@@ -4,7 +4,8 @@
 Combined Omni-Wheel Steering and Motor Speed Controller
 Subscribes to 'driving' (Float32MultiArray):
  - data[0]: heading in degrees
- - data[1]: speed (-8000 to 8000)
+ - data[1]: speed (0 to 8192)
+ - data[2]: rotatoin_speed (0 to 8192)
 Publishes steering positions to 'damiao_control' and sends RPM commands via VESC CAN.
 """
 import math
@@ -124,7 +125,7 @@ class OmniWheelMotorController(Node):
 
         # Update last steering pos
         self.last_pos_rad = target_rad
-        self.get_logger().info(f"Steering {direction_deg:.1f}¡ã -> {target_rad:.2f} rad")
+        self.get_logger().info(f"Steering {direction_deg:.1f}ï¿½ï¿½ -> {target_rad:.2f} rad")
 
         # 2) Speed: normalize raw_speed to [-MAX_RPM, MAX_RPM]
         norm = max(min(raw_speed / 8000.0, 1.0), -1.0)
